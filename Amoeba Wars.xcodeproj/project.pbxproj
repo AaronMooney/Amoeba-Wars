@@ -9,25 +9,63 @@
 /* Begin PBXBuildFile section */
 		E08CE3CC21A82452007934CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3CB21A82452007934CE /* AppDelegate.swift */; };
 		E08CE3CE21A82452007934CE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3CD21A82452007934CE /* GameScene.sks */; };
-		E08CE3D021A82452007934CE /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3CF21A82452007934CE /* Actions.sks */; };
 		E08CE3D221A82452007934CE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3D121A82452007934CE /* GameScene.swift */; };
 		E08CE3D421A82452007934CE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3D321A82452007934CE /* GameViewController.swift */; };
 		E08CE3D721A82452007934CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3D521A82452007934CE /* Main.storyboard */; };
 		E08CE3D921A82453007934CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3D821A82453007934CE /* Assets.xcassets */; };
 		E08CE3DC21A82453007934CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3DA21A82453007934CE /* LaunchScreen.storyboard */; };
+		E08CE3E821A82672007934CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3E721A82672007934CE /* Constants.swift */; };
+		E08CE3F621A826E8007934CE /* attack.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3EA21A826E8007934CE /* attack.wav */; };
+		E08CE3F721A826E8007934CE /* bigHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3EB21A826E8007934CE /* bigHit.wav */; };
+		E08CE3F821A826E8007934CE /* boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3EC21A826E8007934CE /* boom.wav */; };
+		E08CE3F921A826E8007934CE /* defend.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3ED21A826E8007934CE /* defend.wav */; };
+		E08CE3FA21A826E8007934CE /* Latin_Industries.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3EE21A826E8007934CE /* Latin_Industries.mp3 */; };
+		E08CE3FB21A826E8007934CE /* lioncry3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3EF21A826E8007934CE /* lioncry3.wav */; };
+		E08CE3FC21A826E8007934CE /* lionlaugh4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F021A826E8007934CE /* lionlaugh4.wav */; };
+		E08CE3FD21A826E8007934CE /* mass.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F121A826E8007934CE /* mass.wav */; };
+		E08CE3FE21A826E8007934CE /* pew.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F221A826E8007934CE /* pew.wav */; };
+		E08CE3FF21A826E8007934CE /* pew2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F321A826E8007934CE /* pew2.wav */; };
+		E08CE40021A826E8007934CE /* smallHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F421A826E8007934CE /* smallHit.wav */; };
+		E08CE40121A826E8007934CE /* spawn.wav in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3F521A826E8007934CE /* spawn.wav */; };
+		E08CE40321A82888007934CE /* MyMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40221A82888007934CE /* MyMath.swift */; };
+		E08CE40521A8291D007934CE /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40421A8291D007934CE /* SoundManager.swift */; };
+		E08CE40721A829C9007934CE /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40621A829C9007934CE /* ButtonNode.swift */; };
+		E08CE40921A82ECF007934CE /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40821A82ECF007934CE /* SpriteComponent.swift */; };
+		E08CE40B21A82EF1007934CE /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40A21A82EF1007934CE /* Base.swift */; };
+		E08CE40D21A82F0F007934CE /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40C21A82F0F007934CE /* EntityManager.swift */; };
+		E08CE40F21A83270007934CE /* TeamComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE40E21A83270007934CE /* TeamComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E08CE3C821A82452007934CE /* Amoeba Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amoeba Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08CE3CB21A82452007934CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08CE3CD21A82452007934CE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E08CE3CF21A82452007934CE /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		E08CE3D121A82452007934CE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E08CE3D321A82452007934CE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E08CE3D621A82452007934CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E08CE3D821A82453007934CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08CE3DB21A82453007934CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E08CE3DD21A82453007934CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08CE3E721A82672007934CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E08CE3EA21A826E8007934CE /* attack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = attack.wav; sourceTree = "<group>"; };
+		E08CE3EB21A826E8007934CE /* bigHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bigHit.wav; sourceTree = "<group>"; };
+		E08CE3EC21A826E8007934CE /* boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boom.wav; sourceTree = "<group>"; };
+		E08CE3ED21A826E8007934CE /* defend.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = defend.wav; sourceTree = "<group>"; };
+		E08CE3EE21A826E8007934CE /* Latin_Industries.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Latin_Industries.mp3; sourceTree = "<group>"; };
+		E08CE3EF21A826E8007934CE /* lioncry3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lioncry3.wav; sourceTree = "<group>"; };
+		E08CE3F021A826E8007934CE /* lionlaugh4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lionlaugh4.wav; sourceTree = "<group>"; };
+		E08CE3F121A826E8007934CE /* mass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mass.wav; sourceTree = "<group>"; };
+		E08CE3F221A826E8007934CE /* pew.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew.wav; sourceTree = "<group>"; };
+		E08CE3F321A826E8007934CE /* pew2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pew2.wav; sourceTree = "<group>"; };
+		E08CE3F421A826E8007934CE /* smallHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = smallHit.wav; sourceTree = "<group>"; };
+		E08CE3F521A826E8007934CE /* spawn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spawn.wav; sourceTree = "<group>"; };
+		E08CE40221A82888007934CE /* MyMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMath.swift; sourceTree = "<group>"; };
+		E08CE40421A8291D007934CE /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		E08CE40621A829C9007934CE /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		E08CE40821A82ECF007934CE /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		E08CE40A21A82EF1007934CE /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E08CE40C21A82F0F007934CE /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
+		E08CE40E21A83270007934CE /* TeamComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +98,12 @@
 		E08CE3CA21A82452007934CE /* Amoeba Wars */ = {
 			isa = PBXGroup;
 			children = (
+				E08CE3E621A825FB007934CE /* Sounds */,
+				E08CE3E521A825EC007934CE /* Entities */,
+				E08CE3E421A825E1007934CE /* Components */,
+				E08CE3E321A825DA007934CE /* Helpers */,
 				E08CE3CB21A82452007934CE /* AppDelegate.swift */,
 				E08CE3CD21A82452007934CE /* GameScene.sks */,
-				E08CE3CF21A82452007934CE /* Actions.sks */,
 				E08CE3D121A82452007934CE /* GameScene.swift */,
 				E08CE3D321A82452007934CE /* GameViewController.swift */,
 				E08CE3D521A82452007934CE /* Main.storyboard */,
@@ -71,6 +112,62 @@
 				E08CE3DD21A82453007934CE /* Info.plist */,
 			);
 			path = "Amoeba Wars";
+			sourceTree = "<group>";
+		};
+		E08CE3E321A825DA007934CE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E08CE3E721A82672007934CE /* Constants.swift */,
+				E08CE40221A82888007934CE /* MyMath.swift */,
+				E08CE40421A8291D007934CE /* SoundManager.swift */,
+				E08CE40621A829C9007934CE /* ButtonNode.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E08CE3E421A825E1007934CE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E08CE40821A82ECF007934CE /* SpriteComponent.swift */,
+				E08CE40E21A83270007934CE /* TeamComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E08CE3E521A825EC007934CE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E08CE40A21A82EF1007934CE /* Base.swift */,
+				E08CE40C21A82F0F007934CE /* EntityManager.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E08CE3E621A825FB007934CE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E08CE3EA21A826E8007934CE /* attack.wav */,
+				E08CE3EB21A826E8007934CE /* bigHit.wav */,
+				E08CE3EC21A826E8007934CE /* boom.wav */,
+				E08CE3ED21A826E8007934CE /* defend.wav */,
+				E08CE3EE21A826E8007934CE /* Latin_Industries.mp3 */,
+				E08CE3EF21A826E8007934CE /* lioncry3.wav */,
+				E08CE3F021A826E8007934CE /* lionlaugh4.wav */,
+				E08CE3F121A826E8007934CE /* mass.wav */,
+				E08CE3F221A826E8007934CE /* pew.wav */,
+				E08CE3F321A826E8007934CE /* pew2.wav */,
+				E08CE3F421A826E8007934CE /* smallHit.wav */,
+				E08CE3F521A826E8007934CE /* spawn.wav */,
+				E08CE3E921A826E8007934CE /* audio */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		E08CE3E921A826E8007934CE /* audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,11 +228,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08CE3FD21A826E8007934CE /* mass.wav in Resources */,
+				E08CE3FE21A826E8007934CE /* pew.wav in Resources */,
 				E08CE3D721A82452007934CE /* Main.storyboard in Resources */,
+				E08CE3FC21A826E8007934CE /* lionlaugh4.wav in Resources */,
+				E08CE3FF21A826E8007934CE /* pew2.wav in Resources */,
+				E08CE3F721A826E8007934CE /* bigHit.wav in Resources */,
+				E08CE3F821A826E8007934CE /* boom.wav in Resources */,
+				E08CE3FB21A826E8007934CE /* lioncry3.wav in Resources */,
 				E08CE3CE21A82452007934CE /* GameScene.sks in Resources */,
+				E08CE3FA21A826E8007934CE /* Latin_Industries.mp3 in Resources */,
+				E08CE40021A826E8007934CE /* smallHit.wav in Resources */,
+				E08CE3F921A826E8007934CE /* defend.wav in Resources */,
 				E08CE3D921A82453007934CE /* Assets.xcassets in Resources */,
+				E08CE3F621A826E8007934CE /* attack.wav in Resources */,
+				E08CE40121A826E8007934CE /* spawn.wav in Resources */,
 				E08CE3DC21A82453007934CE /* LaunchScreen.storyboard in Resources */,
-				E08CE3D021A82452007934CE /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +254,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08CE40D21A82F0F007934CE /* EntityManager.swift in Sources */,
+				E08CE40F21A83270007934CE /* TeamComponent.swift in Sources */,
 				E08CE3D221A82452007934CE /* GameScene.swift in Sources */,
 				E08CE3D421A82452007934CE /* GameViewController.swift in Sources */,
+				E08CE40921A82ECF007934CE /* SpriteComponent.swift in Sources */,
+				E08CE40321A82888007934CE /* MyMath.swift in Sources */,
 				E08CE3CC21A82452007934CE /* AppDelegate.swift in Sources */,
+				E08CE3E821A82672007934CE /* Constants.swift in Sources */,
+				E08CE40B21A82EF1007934CE /* Base.swift in Sources */,
+				E08CE40521A8291D007934CE /* SoundManager.swift in Sources */,
+				E08CE40721A829C9007934CE /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WIT.Amoeba-Wars";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "WIT.Amoeba-Wars";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
