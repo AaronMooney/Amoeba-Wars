@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    let margin = CGFloat(30)
+    let margin = CGFloat(75)
     
     var histolyticaButton: ButtonNode!
     var fowleriButton: ButtonNode!
@@ -36,10 +36,11 @@ class GameScene: SKScene {
         
         // Add background
         let background = SKSpriteNode(imageNamed: ImageName.Background)
-        background.anchorPoint = CGPoint(x: 0, y: 0)
-        background.position = CGPoint(x: 0, y: 0)
+//        background.anchorPoint = CGPoint(x: 0, y: 0)
+        background.position = CGPoint(x: size.width/2, y: size.height/2)
         background.zPosition = Layer.Background
-        background.size = CGSize(width: size.width, height: size.height)
+        background.size = CGSize(width: self.size.width, height: self.size.height)
+        print("Width:  \(self.size.width)","Height: \(self.size.height)")
         addChild(background)
         
         // Add histolytica button
