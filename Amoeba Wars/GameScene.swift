@@ -11,6 +11,7 @@ import SpriteKit
 class GameScene: SKScene {
     
     let margin = CGFloat(75)
+    let marginVertical = CGFloat(100)
     
     var histolyticaButton: ButtonNode!
     var fowleriButton: ButtonNode!
@@ -45,24 +46,24 @@ class GameScene: SKScene {
         
         // Add histolytica button
         histolyticaButton = ButtonNode(iconName: ImageName.HistolyticaLeft, text: String(GameConfig.HistolyticaCost), onButtonPress: histolyticaPressed)
-        histolyticaButton.position = CGPoint(x: size.width * 0.25, y: margin + histolyticaButton.size.height / 2)
+        histolyticaButton.position = CGPoint(x: size.width * 0.25, y: marginVertical + histolyticaButton.size.height / 2)
         addChild(histolyticaButton)
         
         // Add fowleri button
         fowleriButton = ButtonNode(iconName: ImageName.FowleriLeft, text: String(GameConfig.FowleriCost), onButtonPress: fowleriPressed)
-        fowleriButton.position = CGPoint(x: size.width * 0.5, y: margin + fowleriButton.size.height / 2)
+        fowleriButton.position = CGPoint(x: size.width * 0.5, y: marginVertical + fowleriButton.size.height / 2)
         addChild(fowleriButton)
         
         // Add proteus button
         proteusButton = ButtonNode(iconName: ImageName.ProteusLeft, text: String(GameConfig.ProteusCost), onButtonPress: proteusPressed)
-        proteusButton.position = CGPoint(x: size.width * 0.75, y: margin + proteusButton.size.height / 2)
+        proteusButton.position = CGPoint(x: size.width * 0.75, y: marginVertical + proteusButton.size.height / 2)
         addChild(proteusButton)
         
         // Add coin left indicator
         let coinLeft = SKSpriteNode(imageNamed: ImageName.Coin)
         
         coinLeft.position = CGPoint(x: margin + coinLeft.size.width/2,
-                                    y: size.height - margin - coinLeft.size.height/2)
+                                    y: size.height - marginVertical - coinLeft.size.height/2)
         addChild(coinLeft)
         coinLeftLabel.fontSize = 50
         coinLeftLabel.fontColor = SKColor.black
@@ -77,11 +78,11 @@ class GameScene: SKScene {
         let coinRight = SKSpriteNode(imageNamed: ImageName.Coin)
         
         coinRight.position = CGPoint(x: size.width - margin - coinRight.size.width/2,
-                                    y: size.height - margin - coinRight.size.height/2)
+                                    y: size.height - marginVertical - coinRight.size.height/2)
         addChild(coinRight)
         coinRightLabel.fontSize = 50
         coinRightLabel.fontColor = SKColor.black
-        coinRightLabel.position = CGPoint(x: coinRight.position.x - coinRight.size.width/2 - margin, y: coinRight.position.y)
+        coinRightLabel.position = CGPoint(x: coinRight.position.x - coinRight.size.width/2 - margin * 2, y: coinRight.position.y)
         coinRightLabel.zPosition = Layer.HUD
         coinRightLabel.horizontalAlignmentMode = .left
         coinRightLabel.verticalAlignmentMode = .center
@@ -93,7 +94,7 @@ class GameScene: SKScene {
 //        baseLeftDefence.position = CGPoint(x: size.width * 0.25 - margin, y: histolyticaButton.size.height + baseLeftDefence.size.height / 2)
 //        addChild(baseLeftDefence)
         
-        let baseLeft = Base(imageName: ImageName.Base_Left_Attack, team: .teamLeft)
+        let baseLeft = Base(imageName: ImageName.Base_Left_Attack, team: .teamLeft, entityManager: entityManager)
         if let spriteComponent = baseLeft.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2, y: size.height/2)
         }
@@ -104,7 +105,7 @@ class GameScene: SKScene {
 //        baseRightDefence.position = CGPoint(x: size.width * 0.75 + margin, y: proteusButton.size.height + baseRightDefence.size.height / 2)
 //        addChild(baseRightDefence)
         
-        let baseRight = Base(imageName: ImageName.Base_Right_Attack, team: .teamRight)
+        let baseRight = Base(imageName: ImageName.Base_Right_Attack, team: .teamRight, entityManager: entityManager)
         if let spriteComponent = baseRight.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
         }
@@ -129,12 +130,30 @@ class GameScene: SKScene {
         
     }
     
-    override func update(_ currentTime: TimeInterval) { }
+    override func update(_ currentTime: TimeInterval) {
+        let deltaTime = currentTime - lastUpdateTimeInterval
+        lastUpdateTimeInterval = currentTime
+        
+        entityManager.update(deltaTime)
+        
+        // update player left coins
+        if let playerLeft = entityManager.base(for: .teamLeft),
+            let playerLeftBase = playerLeft.component(ofType: BaseComponent.self) {
+            coinLeftLabel.text = "\(playerLeftBase.coins)"
+        }
+        
+        // update player right coins
+        if let playerRight = entityManager.base(for: .teamRight),
+            let playerRightBase = playerRight.component(ofType: BaseComponent.self) {
+            coinRightLabel.text = "\(playerRightBase.coins)"
+        }
+    }
     
     //MARK: - Button methods
     
     func histolyticaPressed() {
         print("Histolytica pressed!")
+        entityManager.spawnHistolytica(team: .teamLeft)
     }
     
     func fowleriPressed() {

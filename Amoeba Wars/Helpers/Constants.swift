@@ -22,12 +22,14 @@ struct ImageName {
     static let Base_Right_Defence = "Base_Right_Defence"
     static let Base_Left_Attack = "Base_Left_Attack"
     static let Base_Right_Attack = "Base_Right_Attack"
+    static let HistolyticaRight = "HistolyticaRight"
 }
 
 struct Layer {
     static let Background: CGFloat = 0
     static let Button: CGFloat = 1
     static let HUD: CGFloat = 2
+    static let Amoeba: CGFloat = 2
 }
 
 struct PhysicsCategory {
