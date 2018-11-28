@@ -153,15 +153,17 @@ class GameScene: SKScene {
     
     func histolyticaPressed() {
         print("Histolytica pressed!")
-        entityManager.spawnHistolytica(team: .teamLeft)
+        entityManager.spawnAmoeba(team: Team.teamLeft, type: "histolytica")
     }
     
     func fowleriPressed() {
         print("Fowleri pressed!")
+        entityManager.spawnAmoeba(team: .teamLeft, type: "fowleri")
     }
     
     func proteusPressed() {
         print("Proteus pressed!")
+        entityManager.spawnAmoeba(team: .teamLeft, type: "proteus")
     }
     
 }

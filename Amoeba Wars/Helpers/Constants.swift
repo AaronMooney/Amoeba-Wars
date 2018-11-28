@@ -23,6 +23,8 @@ struct ImageName {
     static let Base_Left_Attack = "Base_Left_Attack"
     static let Base_Right_Attack = "Base_Right_Attack"
     static let HistolyticaRight = "HistolyticaRight"
+    static let FowleriRight = "FowleriRight"
+    static let ProteusRight = "ProteusRight"
 }
 
 struct Layer {
