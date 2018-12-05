@@ -13,6 +13,8 @@
 		E06659CB21AEF28400FE1294 /* Histolytica.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06659CA21AEF28400FE1294 /* Histolytica.swift */; };
 		E06659CD21AEFC4C00FE1294 /* Fowleri.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06659CC21AEFC4C00FE1294 /* Fowleri.swift */; };
 		E06659CF21AEFF2400FE1294 /* Proteus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06659CE21AEFF2400FE1294 /* Proteus.swift */; };
+		E06F449621B8264D0099D9BF /* Amoeba.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F449521B8264D0099D9BF /* Amoeba.swift */; };
+		E06F449C21B82E090099D9BF /* AIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F449B21B82E090099D9BF /* AIComponent.swift */; };
 		E08CE3CC21A82452007934CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3CB21A82452007934CE /* AppDelegate.swift */; };
 		E08CE3CE21A82452007934CE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E08CE3CD21A82452007934CE /* GameScene.sks */; };
 		E08CE3D221A82452007934CE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08CE3D121A82452007934CE /* GameScene.swift */; };
@@ -49,6 +51,8 @@
 		E06659CA21AEF28400FE1294 /* Histolytica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Histolytica.swift; sourceTree = "<group>"; };
 		E06659CC21AEFC4C00FE1294 /* Fowleri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fowleri.swift; sourceTree = "<group>"; };
 		E06659CE21AEFF2400FE1294 /* Proteus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proteus.swift; sourceTree = "<group>"; };
+		E06F449521B8264D0099D9BF /* Amoeba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Amoeba.swift; sourceTree = "<group>"; };
+		E06F449B21B82E090099D9BF /* AIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIComponent.swift; sourceTree = "<group>"; };
 		E08CE3C821A82452007934CE /* Amoeba Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Amoeba Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08CE3CB21A82452007934CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08CE3CD21A82452007934CE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				E06659C421AEEBC500FE1294 /* BaseComponent.swift */,
 				E06659C621AEEF6400FE1294 /* MoveBehaviour.swift */,
 				E06659C821AEEF9F00FE1294 /* MoveComponent.swift */,
+				E06F449B21B82E090099D9BF /* AIComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				E06659CA21AEF28400FE1294 /* Histolytica.swift */,
 				E06659CC21AEFC4C00FE1294 /* Fowleri.swift */,
 				E06659CE21AEFF2400FE1294 /* Proteus.swift */,
+				E06F449521B8264D0099D9BF /* Amoeba.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -273,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E06659CD21AEFC4C00FE1294 /* Fowleri.swift in Sources */,
+				E06F449C21B82E090099D9BF /* AIComponent.swift in Sources */,
 				E06659C921AEEF9F00FE1294 /* MoveComponent.swift in Sources */,
 				E06659CF21AEFF2400FE1294 /* Proteus.swift in Sources */,
 				E06659C721AEEF6400FE1294 /* MoveBehaviour.swift in Sources */,
@@ -288,6 +295,7 @@
 				E08CE40B21A82EF1007934CE /* Base.swift in Sources */,
 				E08CE40521A8291D007934CE /* SoundManager.swift in Sources */,
 				E06659CB21AEF28400FE1294 /* Histolytica.swift in Sources */,
+				E06F449621B8264D0099D9BF /* Amoeba.swift in Sources */,
 				E08CE40721A829C9007934CE /* ButtonNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

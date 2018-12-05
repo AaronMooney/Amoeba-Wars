@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class Histolytica: GKEntity {
+class Histolytica: Amoeba {
     
     init(team: Team, entityManager: EntityManager) {
         super.init()

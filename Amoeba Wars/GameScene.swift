@@ -89,29 +89,17 @@ class GameScene: SKScene {
         coinRightLabel.text = "0"
         self.addChild(coinRightLabel)
         
-        // Add base left
-//        let baseLeftDefence = SKSpriteNode(imageNamed: ImageName.Base_Left_Defence)
-//        baseLeftDefence.position = CGPoint(x: size.width * 0.25 - margin, y: histolyticaButton.size.height + baseLeftDefence.size.height / 2)
-//        addChild(baseLeftDefence)
-        
-        let baseLeft = Base(imageName: ImageName.Base_Left_Attack, team: .teamLeft, entityManager: entityManager)
+        let baseLeft = Base(imageName: ImageName.Base_Left_Attack, team: .teamLeft, entityManager: entityManager, AI: false)
         if let spriteComponent = baseLeft.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2, y: size.height/2)
         }
         entityManager.add(baseLeft)
         
-        // Add base right
-//        let baseRightDefence = SKSpriteNode(imageNamed: ImageName.Base_Right_Defence)
-//        baseRightDefence.position = CGPoint(x: size.width * 0.75 + margin, y: proteusButton.size.height + baseRightDefence.size.height / 2)
-//        addChild(baseRightDefence)
-        
-        let baseRight = Base(imageName: ImageName.Base_Right_Attack, team: .teamRight, entityManager: entityManager)
+        let baseRight = Base(imageName: ImageName.Base_Right_Attack, team: .teamRight, entityManager: entityManager, AI: true)
         if let spriteComponent = baseRight.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
         }
         entityManager.add(baseRight)
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -153,17 +141,17 @@ class GameScene: SKScene {
     
     func histolyticaPressed() {
         print("Histolytica pressed!")
-        entityManager.spawnAmoeba(team: Team.teamLeft, type: "histolytica")
+        entityManager.spawnAmoeba(team: Team.teamLeft, type: AmoebaType.Histolytica)
     }
     
     func fowleriPressed() {
         print("Fowleri pressed!")
-        entityManager.spawnAmoeba(team: .teamLeft, type: "fowleri")
+        entityManager.spawnAmoeba(team: .teamLeft, type: AmoebaType.Fowleri)
     }
     
     func proteusPressed() {
         print("Proteus pressed!")
-        entityManager.spawnAmoeba(team: .teamLeft, type: "proteus")
+        entityManager.spawnAmoeba(team: .teamLeft, type: AmoebaType.Proteus)
     }
     
 }

@@ -12,12 +12,15 @@ import GameplayKit
 // 1
 class Base: GKEntity {
     
-    init(imageName: String, team: Team, entityManager: EntityManager) {
+    init(imageName: String, team: Team, entityManager: EntityManager, AI: Bool) {
         super.init()
         
         // 2
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName))
         addComponent(spriteComponent)
+        if (AI) {
+            addComponent(AIComponent(team: team, entityManager: entityManager))
+        }
         addComponent(TeamComponent(team: team))
         addComponent(BaseComponent())
         addComponent(MoveComponent(maxSpeed: 0, maxAcceleration: 0, radius: Float(spriteComponent.node.size.width / 2), entityManager: entityManager))

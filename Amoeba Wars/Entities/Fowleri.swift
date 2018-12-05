@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class Fowleri: GKEntity {
+class Fowleri: Amoeba {
     
     init(team: Team, entityManager: EntityManager) {
         super.init()

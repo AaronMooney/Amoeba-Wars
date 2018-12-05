@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class Proteus: GKEntity {
+class Proteus: Amoeba {
     
     init(team: Team, entityManager: EntityManager) {
         super.init()

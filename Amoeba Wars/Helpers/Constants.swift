@@ -42,3 +42,9 @@ struct GameConfig {
     static let FowleriCost = 25
     static let ProteusCost = 50
 }
+
+enum AmoebaType: Int {
+    case Histolytica = 0
+    case Fowleri = 1
+    case Proteus = 2
+}
