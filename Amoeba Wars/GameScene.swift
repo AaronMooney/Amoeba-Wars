@@ -19,6 +19,9 @@ class GameScene: SKScene {
     
     let coinLeftLabel = SKLabelNode(fontNamed: "Courier-Bold")
     let coinRightLabel = SKLabelNode(fontNamed: "Courier-Bold")
+    let baseLeftHealthLabel = SKLabelNode(fontNamed: "Courier-Bold")
+    let baseRightHealthLabel = SKLabelNode(fontNamed: "Courier-Bold")
+    let gameOverLabel = SKLabelNode(fontNamed: "Courier-Bold")
     
     var lastUpdateTimeInterval: TimeInterval = 0
     
@@ -34,6 +37,11 @@ class GameScene: SKScene {
         let bgMusic = SKAudioNode(fileNamed: SoundFile.BackgroundMusic)
         bgMusic.autoplayLooped = true
         addChild(bgMusic)
+        
+        gameOverLabel.position = CGPoint(x: size.width/2, y: size.height/2)
+        gameOverLabel.zPosition = Layer.HUD
+        gameOverLabel.fontColor = SKColor.black
+        addChild(gameOverLabel)
         
         // Add background
         let background = SKSpriteNode(imageNamed: ImageName.Background)
@@ -89,16 +97,49 @@ class GameScene: SKScene {
         coinRightLabel.text = "0"
         self.addChild(coinRightLabel)
         
+        //Base Left
         let baseLeft = Base(imageName: ImageName.Base_Left_Attack, team: .teamLeft, entityManager: entityManager, AI: false)
+        var baseLeftPosition = CGPoint(x: size.width/2,y: size.height/2)
         if let spriteComponent = baseLeft.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2, y: size.height/2)
+            baseLeftPosition = spriteComponent.node.position
+            spriteComponent.node.physicsBody = SKPhysicsBody(texture: spriteComponent.node.texture!, size: spriteComponent.node.texture!.size())
+            spriteComponent.node.physicsBody?.contactTestBitMask = (spriteComponent.node.physicsBody?.collisionBitMask)!
+            spriteComponent.node.physicsBody?.isDynamic = false
         }
+        baseLeftHealthLabel.fontSize = 35
+        baseLeftHealthLabel.fontColor = SKColor.black
+        baseLeftHealthLabel.position = CGPoint(x: baseLeftPosition.x - 100 , y: baseLeftPosition.y - 120)
+        baseLeftHealthLabel.zPosition = Layer.HUD
+        baseLeftHealthLabel.horizontalAlignmentMode = .left
+        baseLeftHealthLabel.verticalAlignmentMode = .center
+        if let healthComponent = baseLeft.component(ofType: HealthComponent.self) {
+            baseLeftHealthLabel.text = "Health: \(String(healthComponent.currentHealth))"
+        }
+        self.addChild(baseLeftHealthLabel)
         entityManager.add(baseLeft)
         
+        
+        //Base Right
         let baseRight = Base(imageName: ImageName.Base_Right_Attack, team: .teamRight, entityManager: entityManager, AI: true)
+        var baseRightPosition = CGPoint(x: size.width/2,y: size.height/2)
         if let spriteComponent = baseRight.component(ofType: SpriteComponent.self) {
             spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
+            baseRightPosition = spriteComponent.node.position
+            spriteComponent.node.physicsBody = SKPhysicsBody(texture: spriteComponent.node.texture!, size: spriteComponent.node.texture!.size())
+            spriteComponent.node.physicsBody?.contactTestBitMask = (spriteComponent.node.physicsBody?.collisionBitMask)!
+            spriteComponent.node.physicsBody?.isDynamic = false
         }
+        baseRightHealthLabel.fontSize = 35
+        baseRightHealthLabel.fontColor = SKColor.black
+        baseRightHealthLabel.position = CGPoint(x: baseRightPosition.x - 135 , y: baseRightPosition.y - 120)
+        baseRightHealthLabel.zPosition = Layer.HUD
+        baseRightHealthLabel.horizontalAlignmentMode = .left
+        baseRightHealthLabel.verticalAlignmentMode = .center
+        if let healthComponent = baseLeft.component(ofType: HealthComponent.self) {
+            baseRightHealthLabel.text = "Health: \(String(healthComponent.currentHealth))"
+        }
+        self.addChild(baseRightHealthLabel)
         entityManager.add(baseRight)
     }
     
@@ -110,6 +151,7 @@ class GameScene: SKScene {
         print("\(touchLocation)")
         
         if gameOver {
+            gameOverLabel.text = ""
             let newScene = GameScene(size: size)
             newScene.scaleMode = scaleMode
             view?.presentScene(newScene, transition: SKTransition.flipHorizontal(withDuration: 0.5))
@@ -130,10 +172,37 @@ class GameScene: SKScene {
             coinLeftLabel.text = "\(playerLeftBase.coins)"
         }
         
+        //update player left health
+        if let playerLeftHealth = entityManager.base(for: .teamLeft)?.component(ofType: HealthComponent.self){
+            baseLeftHealthLabel.text = "Health: \(String(playerLeftHealth.currentHealth))"
+            if (playerLeftHealth.currentHealth <= 0){
+                promptRestart(victory: false)
+                gameOver = true
+            }
+        }
+        
         // update player right coins
         if let playerRight = entityManager.base(for: .teamRight),
             let playerRightBase = playerRight.component(ofType: BaseComponent.self) {
             coinRightLabel.text = "\(playerRightBase.coins)"
+        }
+        
+        //update player right health
+        if let playerRightHealth = entityManager.base(for: .teamRight)?.component(ofType: HealthComponent.self){
+            baseRightHealthLabel.text = "Health: \(String(playerRightHealth.currentHealth))"
+            if (playerRightHealth.currentHealth <= 0){
+                promptRestart(victory: true)
+                gameOver = true
+            }
+        }
+    }
+    
+    func promptRestart(victory: Bool){
+        
+        if victory {
+            gameOverLabel.text = "You Win! Tap to restart!"
+        } else {
+            gameOverLabel.text = "You Lose! Tap to restart!"
         }
     }
     

@@ -15,7 +15,9 @@ class EntityManager {
         let baseSystem = GKComponentSystem(componentClass: BaseComponent.self)
         let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
         let aiSytem = GKComponentSystem(componentClass: AIComponent.self)
-        return [baseSystem, moveSystem, aiSytem]
+        let healthSystem = GKComponentSystem(componentClass: HealthComponent.self)
+        let attackSystem = GKComponentSystem(componentClass: AttackComponent.self)
+        return [baseSystem, moveSystem, aiSytem, healthSystem, attackSystem]
     } ()
     // 1
     var entities = Set<GKEntity>()

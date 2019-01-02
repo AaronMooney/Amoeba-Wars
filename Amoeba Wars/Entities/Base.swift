@@ -16,7 +16,8 @@ class Base: GKEntity {
         super.init()
         
         // 2
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName))
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName),name: "base")
+        spriteComponent.node.zPosition = Layer.Base
         addComponent(spriteComponent)
         if (AI) {
             addComponent(AIComponent(team: team, entityManager: entityManager))
@@ -24,6 +25,7 @@ class Base: GKEntity {
         addComponent(TeamComponent(team: team))
         addComponent(BaseComponent())
         addComponent(MoveComponent(maxSpeed: 0, maxAcceleration: 0, radius: Float(spriteComponent.node.size.width / 2), entityManager: entityManager))
+        addComponent(HealthComponent(maxHealth: 500))
     }
     
     required init?(coder aDecoder: NSCoder) {

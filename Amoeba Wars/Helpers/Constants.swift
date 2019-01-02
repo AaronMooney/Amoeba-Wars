@@ -30,11 +30,14 @@ struct ImageName {
 struct Layer {
     static let Background: CGFloat = 0
     static let Button: CGFloat = 1
-    static let HUD: CGFloat = 2
-    static let Amoeba: CGFloat = 2
+    static let Base: CGFloat = 2
+    static let HUD: CGFloat = 4
+    static let Amoeba: CGFloat = 3
 }
 
 struct PhysicsCategory {
+    static let Enemy = 1
+    static let Ally = 2
 }
 
 struct GameConfig {
