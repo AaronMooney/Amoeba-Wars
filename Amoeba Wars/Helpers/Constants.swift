@@ -35,11 +35,6 @@ struct Layer {
     static let Amoeba: CGFloat = 3
 }
 
-struct PhysicsCategory {
-    static let Enemy = 1
-    static let Ally = 2
-}
-
 struct GameConfig {
     static let HistolyticaCost = 10
     static let FowleriCost = 25
